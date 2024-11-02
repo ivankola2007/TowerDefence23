@@ -14,7 +14,8 @@ public class ButtonShop : MonoBehaviour
 
     [SerializeField]
     private Button button;
-
+    public void Awake ()
+    cosText.text = cost.ToString();
     private void Start()
     {
         costText.text = cost.ToString();
@@ -23,6 +24,8 @@ public class ButtonShop : MonoBehaviour
 
     private void SetBuildTurret(int cost, int buildIndex)
     {
-
+      costText.text = cost.ToString();
+      var buildManager = BuildManager.Instance;
+    buton.onCliock.AddListenner(() => buildManager.SetBuildTurret(cost, buildIndex));
     }
 }

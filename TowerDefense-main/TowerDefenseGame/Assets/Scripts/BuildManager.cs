@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
+    public static BuildManager Instance;
     [SerializeField]
     private LayerMask layerMask;
     [SerializeField]
@@ -48,5 +49,10 @@ public class BuildManager : MonoBehaviour
         {
             selectedNode.GetComponent<BuildSettings>().StartBuild(turretPrefab, 0.35f);
         }
+        public void SetBuildTurret(int cost, int buildIndex)
+        canBuild = true;
+        turretIndex = buildIndex;
+        this.cost = cost;
+        
     }
 }
